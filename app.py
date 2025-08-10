@@ -11,7 +11,7 @@ model = joblib.load("loan_pipeline.joblib")
 # Page config
 st.set_page_config(page_title="Loan Approval Predictor", page_icon="💰", layout="centered")
 
-st.title("💰 Loan Approval Prediction")
+st.title(" Loan Approval Prediction")
 st.write("Enter applicant details to check loan approval probability.")
 
 # Form for user input
@@ -50,9 +50,9 @@ if submitted:
 
     # Predict probability
     prob = model.predict_proba(input_df)[0][1]
-    decision = "✅ Approved" if prob >= 0.5 else "❌ Not Approved"
+    decision = " Approved" if prob >= 0.5 else " Not Approved"
 
-    st.subheader("📊 Prediction Result")
+    st.subheader(" Prediction Result")
     st.write(f"**Decision:** {decision}")
     st.write(f"**Approval Probability:** {prob:.2f}")
 
@@ -60,7 +60,7 @@ if submitted:
     st.info("Prediction is based on historical loan approval data and may not reflect actual bank decisions.")
 
 st.markdown("""
-### 📄 Loan Prediction Dataset – Field Details
+###  Loan Prediction Dataset – Field Details
 
 | Field Name        | Type                 | Meaning                              | Value Range / Units                      | How the Model Considers It |
 |-------------------|----------------------|--------------------------------------|-------------------------------------------|----------------------------|
@@ -79,7 +79,7 @@ st.markdown("""
 """)
 
 # Feature importance chart
-st.subheader("🔍 Factors Affecting Loan Approval")
+st.subheader(" Factors Affecting Loan Approval")
 try:
     image = Image.open("feature_importance.png")
     st.image(image, caption="Top Features Influencing Approval", use_column_width=True)
