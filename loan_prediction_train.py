@@ -86,4 +86,4 @@ plt.show()
 
 # 13. Save model
 joblib.dump(model, "loan_pipeline.joblib")
-print("✅ Model saved as loan_pipeline.joblib")
+print("Model saved as loan_pipeline.joblib")
